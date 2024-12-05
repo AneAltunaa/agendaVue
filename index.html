@@ -9,6 +9,19 @@
 
     <title>AgendaVue</title>
 
+    <!--Para twitter-->
+    <meta name='twitter:card' content='summary'>
+    <meta name="twitter:site" content="@AgendaVue">
+    <meta name='twitter:title' content='AgendaVue'>
+    <meta name="twitter:url" content="https://proyectoagendavue.netlify.app/">
+    <meta name='twitter:description' content='Una agenda que guarda contactos'>
+    
+    <!--Para Facebook-->
+    <meta property='og:title' content='AgendaVue' />
+    <meta property='og:type' content='website'/>
+    <meta property='og:url' content=' https://www.AgendaVue.com/' />
+    <meta property='og:description' content='Una agenda que guarda contactos' />
+
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -47,7 +60,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
@@ -94,27 +107,27 @@
                 </div>
             </div>
             <div>
-            <div class="row">
+            <div class="row" vocab="http://schema.org/" typeof="Person">
                 <div class="col-xs-4">
-                    <h4>Nombre</h4>
+                    <h4 property="name">Nombre</h4>
                 </div>
                 <div class="col-xs-4">
-                    <h4>Email</h4>
+                    <h4 property="email">Email</h4>
                 </div>
                 <div class="col-xs-3">
-                    <h4>Teléfono</h4>
+                    <h4 property="telephone">Teléfono</h4>
                 </div>
             </div>
-        <div v-if="contactos.length > 0" >
+        <div v-if="contactos.length > 0" vocab="http://schema.org/" typeof="Person">
             <div class="row" v-for="(contacto, index) in contactos" :key="index">
                 <div class="col-xs-4">
-                    <p>{{ contacto.nombre }}</p>
+                    <p property="name">{{ contacto.nombre }}</p>
                 </div>
                 <div class="col-xs-4">
-                    <p>{{ contacto.email }}</p>
+                    <p property="email">{{ contacto.email }}</p>
                 </div>
                 <div class="col-xs-3">
-                    <p>{{ contacto.telefono }}</p>
+                    <p property="telephone">{{ contacto.telefono }}</p>
                 </div>
                 <div class="col-xs-1">
                       <button class="btn btn-danger btn-sm" @click="eliminarContacto(index)"><span class="glyphicon glyphicon-remove"></span></button>
