@@ -41,6 +41,22 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         
     <![endif]-->
+
+    <!--JSON-LD información sobre al página-->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "AgendaVue",
+        "description": "Una agenda que guarda contactos.",
+        "url": "https://proyectoagendavue.netlify.app/",
+        "author": {
+        "@type": "Person",
+        "name": "agendaPersona",
+        "url": "https://proyectoagendavue.netlify.app/"
+        }
+    }
+    </script>
     
 </head>
 
@@ -149,6 +165,7 @@
 
 
     <!-- Añadir nuevo Section -->
+    <!--Aqui usamos Microdata en vez de RDFa-->
     <section id="nuevo">
         <div class="container">
             <div class="row">
@@ -158,25 +175,25 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-8 col-lg-offset-2" itemscope itemtype="https://schema.org/Person">
                     <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Nombre</label>
+                                <label itemprop="name">Nombre</label>
                                 <input type="text" class="form-control" placeholder="Nombre" id="name" v-model="nuevoContacto.nombre">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Email</label>
+                                <label itemprop="email">Email</label>
                                 <input type="email" class="form-control" placeholder="Email" id="email" v-model="nuevoContacto.email">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
-                                <label>Teléfono</label>
+                                <label itemprop="telephone">Teléfono</label>
                                 <input type="tel" class="form-control" placeholder="Número de teléfono" id="phone" v-model="nuevoContacto.telefono">
                                 <p class="help-block text-danger"></p>
                             </div>
