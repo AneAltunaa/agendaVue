@@ -17,10 +17,10 @@
     <meta name='twitter:description' content='Una agenda que guarda contactos'>
     <meta name="twitter:image" content="https://js.devexpress.com/Content/Images/Frameworks/Vue.png"> 
     <!--Para Facebook-->
-    <meta property='og:title' content='AgendaVue' />
-    <meta property='og:type' content='website'/>
-    <meta property='og:url' content='https://proyectoagendavue.netlify.app/' />
-    <meta property='og:description' content='Una agenda que guarda contactos' />
+    <meta property='og:title' content='AgendaVue'>
+    <meta property='og:type' content='website'>
+    <meta property='og:url' content='https://proyectoagendavue.netlify.app/'>
+    <meta property='og:description' content='Una agenda que guarda contactos'>
     <meta property="og:image" content="https://js.devexpress.com/Content/Images/Frameworks/Vue.png"> 
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
@@ -123,7 +123,7 @@
                     <hr class="star-primary">
                 </div>
             </div>
-            <div>
+            
             <div class="row" vocab="http://schema.org/" typeof="Person">
                 <div class="col-xs-4">
                     <h4 property="name">Nombre</h4>
@@ -135,8 +135,8 @@
                     <h4 property="telephone">Teléfono</h4>
                 </div>
             </div>
-        <div v-if="contactos.length > 0" vocab="http://schema.org/" typeof="Person">
-            <div class="row" v-for="(contacto, index) in contactos" :key="index">
+        <div  v-if="contactos.length > 0" vocab="http://schema.org/" typeof="Person">
+            <div class="row" v-for="(contacto, index) in contactos" >
                 <div class="col-xs-4">
                     <p property="name">{{ contacto.nombre }}</p>
                 </div>
@@ -151,6 +151,7 @@
                 </div>
             </div>
             </div>
+        
 
             <div v-else>
               <div class="row" >
